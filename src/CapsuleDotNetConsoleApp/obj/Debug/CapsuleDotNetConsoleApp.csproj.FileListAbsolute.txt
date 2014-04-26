@@ -11,3 +11,14 @@ C:\SourcecodeMain\CapsuleDotNet\CapsuleDotNetConsoleApp\obj\Debug\CapsuleDotNetC
 C:\SourcecodeMain\CapsuleDotNet\CapsuleDotNetConsoleApp\bin\Debug\RestSharp.dll
 C:\SourcecodeMain\CapsuleDotNet\CapsuleDotNetConsoleApp\bin\Debug\RestSharp.xml
 C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\bin\Debug\CapsuleDotNetConsoleApp.exe.config
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\bin\Debug\CapsuleDotNetConsoleApp.exe
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\bin\Debug\CapsuleDotNetConsoleApp.pdb
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\bin\Debug\CapsuleDotNetWrapper.dll
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\bin\Debug\log4net.dll
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\bin\Debug\RestSharp.dll
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\bin\Debug\CapsuleDotNetWrapper.pdb
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\bin\Debug\log4net.xml
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\bin\Debug\RestSharp.xml
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\obj\Debug\CapsuleDotNetConsoleApp.csprojResolveAssemblyReference.cache
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\obj\Debug\CapsuleDotNetConsoleApp.exe
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetConsoleApp\obj\Debug\CapsuleDotNetConsoleApp.pdb

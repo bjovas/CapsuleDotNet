@@ -20,5 +20,18 @@ namespace CapsuleDotNetTests
             result.firstName.ShouldEqual("Ola");
             result.lastName.ShouldEqual("Nordmann");
         }
+
+        [Test]
+        public void Should_get_exception_when_user_config_is_insufficient()
+        {
+            Assert.That(() => new CapsuleDotNetWrapper.Services.PersonService("", "https://someapi.com"), Throws.Exception.TypeOf<ArgumentException>());
+            
+        }
+
+        [Test]
+        public void Should_get_exception_when_url_config_is_insufficient()
+        {
+            Assert.That(() => new CapsuleDotNetWrapper.Services.PersonService("somepassword", ""), Throws.Exception.TypeOf<ArgumentException>());
+        }
     }
 }
