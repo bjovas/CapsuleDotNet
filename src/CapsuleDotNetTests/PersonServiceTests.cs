@@ -32,8 +32,8 @@ namespace CapsuleDotNetTests
             {
                 person = new Person() 
                 { 
-                    firstName = generator.GenerateString(7), 
-                    lastName = generator.GenerateString(12) }
+                    firstName = generator.GenerateString(6), 
+                    lastName = generator.GenerateString(10) }
             };
 
             var result = personService.Create(person);
@@ -42,11 +42,28 @@ namespace CapsuleDotNetTests
             result.lastName.ShouldEqual(person.person.lastName);
         }
 
+
+
+        [Test]
+        public void DeletePerson()
+        {
+            var person = new PersonToCreate()
+            {
+                person = new Person()
+                {
+                    firstName = generator.GenerateString(7),
+                    lastName = generator.GenerateString(12)
+                }
+            };
+
+            var newperson = personService.Create(person);
+            personService.Delete(newperson).ShouldBeTrue();
+        }
+
         [Test]
         public void Should_get_exception_when_user_config_is_insufficient()
         {
-            Assert.That(() => new CapsuleDotNetWrapper.Services.PersonService("", "https://someapi.com"), Throws.Exception.TypeOf<ArgumentException>());
-            
+            Assert.That(() => new CapsuleDotNetWrapper.Services.PersonService("", "https://someapi.com"), Throws.Exception.TypeOf<ArgumentException>());         
         }
 
         [Test]
@@ -58,9 +75,14 @@ namespace CapsuleDotNetTests
         [SetUp]
         public void Setup()
         {
-            personService = new CapsuleDotNetWrapper.Services.PersonService("", "");
+            // Insert a valid API token and Base URL here.
+            personService = new CapsuleDotNetWrapper.Services.PersonService("","");
+
+            // random string generator used as a crux to make tests a bit easier to follow.
+            generator = new StringGenerator();
         }
 
         PersonService personService;
+        StringGenerator generator;
     }
 }

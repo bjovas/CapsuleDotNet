@@ -56,11 +56,10 @@ namespace CapsuleDotNetWrapper.Services
             client.BaseUrl = BaseUrl;
             client.Authenticator = new HttpBasicAuthenticator(_authtoken, "x");
 
-            if (request.Method == Method.POST)
-                client.FollowRedirects = false;
 
-            var response = client.Execute<T>(request);
             LogRequest(request, client);
+            var response = client.Execute<T>(request);
+            
 
             string locationUrl = (string)response.Headers.Where(h => h.Type == ParameterType.HttpHeader && h.Name == "Location").SingleOrDefault().Value;
             int id;
@@ -90,22 +89,27 @@ namespace CapsuleDotNetWrapper.Services
             if (log.IsDebugEnabled)
             {
                 log.DebugFormat("{0} request to {1}{2}", request.Method, client.BaseUrl, request.Resource);
-            //    if (request.Method == Method.POST || request.Method == Method.PUT)
-              //      log.DebugFormat("Body: ", request.Parameters.Select(p => p.Type == ParameterType.RequestBody).Single().ToString());
+                if (request.Method == Method.POST || request.Method == Method.PUT)
+                    log.DebugFormat("Requestbody Parameter: {0} ", request.Parameters.Where(p => p.Type == ParameterType.RequestBody).Single().ToString());
             }
         }
 
         private static void LogResponse<T>(IRestResponse<T> response)  where T : new()
         {
-            log.Debug("Response content:");
-            log.Debug(response.Content);
+            if (log.IsDebugEnabled)
+            {
+                log.DebugFormat("Response: {0} {1}", response.StatusCode, response.StatusDescription);
+            
+                log.Debug("Response content:");
+                log.Debug(response.Content);
+            }
         }
 
         private static void ErrorHandling<T>(IRestResponse<T> response) where T : new()
         {
             if (response.StatusCode == System.Net.HttpStatusCode.OK || response.StatusCode == System.Net.HttpStatusCode.Created)
             {
-                log.Debug("Seems promising :) ");
+                log.InfoFormat("HTTP Status: {0}", response.StatusCode);
             }
             else if (response.ErrorException != null)
             {

@@ -16,6 +16,7 @@ namespace CapsuleDotNetWrapper.Services
 
         public Person Create(PersonToCreate person)
         {
+            log.InfoFormat("Creating person: {0} {1}", person.person.firstName, person.person.lastName);
             var request = new RestRequest("/api/person", Method.POST);
             request.RequestFormat = DataFormat.Json;
             request.RootElement = "person";
@@ -26,11 +27,34 @@ namespace CapsuleDotNetWrapper.Services
         }
         public Person GetPerson(string personId)
         {
+            log.InfoFormat("Get person by id: {0}", personId);
+
             var request = new RestRequest();
             request.Resource = "/api/party/" + personId;
             request.RootElement = "person";
 
             return Execute<Person>(request);
+        }
+        public bool Delete(Person person)
+        {
+            log.InfoFormat("Deleting person id: {0}", person.id);
+
+            var request = new RestRequest();
+            request.Method = Method.DELETE;
+            request.Resource = "/api/party/" + person.id;
+            request.RootElement = "person";
+
+
+            try
+            {
+                Execute<Person>(request);
+                return true;
+            }
+            catch (Exception e)
+            {
+                log.Error("Could not delete person", e);
+                return false;
+            }
         }
     }
 }
