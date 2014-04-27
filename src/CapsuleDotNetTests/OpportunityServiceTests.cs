@@ -64,7 +64,7 @@ namespace CapsuleDotNetTests
         [SetUp]
         public void Setup()
         {
-            // Insert a valid API token and Base URL in the app.config file
+            // Insert a valid API token and Base URL in the app.
             opportunityService = new CapsuleDotNetWrapper.Services.OpportunityService(ConfigurationManager.AppSettings["Usertoken"], ConfigurationManager.AppSettings["ApiBaseUrl"]);
 
             // random string generator used as a crux to make tests a bit easier to follow.

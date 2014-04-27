@@ -15,6 +15,7 @@ namespace CapsuleDotNetWrapper
         public string id { get; set; }
         //public DateTime createdOn { get; set; }
         //public DateTime updatedOn { get; set; }
+        public Contacts contacts { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         //public string organisationId { get; set; }
@@ -25,4 +26,30 @@ namespace CapsuleDotNetWrapper
     {
         public Person person { get; set; }
     }
+
+
+    public class Contacts
+    {
+        public Email email { get; set; }
+        public Phone phone { get; set; }
+
+
+    }
+
+    public class Email
+    {
+        public string type { get; set; }
+        public string emailAddress { get; set; }
+
+
+    }
+
+
+    public class Phone
+    {
+        public string type { get; set; }
+        public string phoneNumber { get; set; }
+
+    }
+
 }

@@ -17,11 +17,11 @@ namespace CapsuleDotNetTests
     {
         [Test]
         public void GetPerson()
-        {         
-            var result = personService.GetPerson("60275159");
-            result.id.ShouldEqual("60275159");
-            result.firstName.ShouldEqual("Ola");
-            result.lastName.ShouldEqual("Nordmann");
+        {
+            var result = personService.GetPerson("60275092");
+            result.id.ShouldEqual("60275092");
+            result.firstName.ShouldEqual("Bjørn");
+            result.lastName.ShouldEqual("Vasbotten");
         }
 
         [Test]
@@ -34,7 +34,23 @@ namespace CapsuleDotNetTests
                 person = new Person() 
                 { 
                     firstName = generator.GenerateString(6), 
-                    lastName = generator.GenerateString(10) }
+                    lastName = generator.GenerateString(10),
+                    contacts = new Contacts()
+                    {
+                        email = new Email()
+                        {
+                            type = "Work",
+                            emailAddress = "b@vasbotten.net"
+                        },
+                        phone = new Phone()
+                        {
+                            type = "Work",
+                            phoneNumber = "12345678"
+                        }
+
+                    }
+                }
+                    
             };
 
             var result = personService.Create(person);
