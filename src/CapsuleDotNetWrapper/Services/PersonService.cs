@@ -10,7 +10,7 @@ namespace CapsuleDotNetWrapper.Services
 {
     public class PersonService : CapsuleApi
     {
-        private static ILog log = LogManager.GetLogger("Default");
+        private static ILog log = LogManager.GetLogger("PersonService");
 
         public PersonService(string authToken, string url) : base(authToken, url) { }
 

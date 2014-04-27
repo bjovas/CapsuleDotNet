@@ -62,8 +62,12 @@ namespace CapsuleDotNetWrapper.Services
             
 
             string locationUrl = (string)response.Headers.Where(h => h.Type == ParameterType.HttpHeader && h.Name == "Location").SingleOrDefault().Value;
+
+            var split = locationUrl.Split('/');
+            
+            
             int id;
-            if (int.TryParse(locationUrl.Remove(0, string.Format("{0}{1}", client.BaseUrl, request.Resource).Length), out id))
+            if (int.TryParse(split[split.Length-1], out id))
             {
                 
                 var newresource = locationUrl.Remove(0, string.Format("{0}", client.BaseUrl).Length);

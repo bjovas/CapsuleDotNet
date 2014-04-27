@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,28 @@ namespace CapsuleDotNetTests
         }
 
 
+        [Test]
+        public void CreatePersonWithOrganization()
+        {
+            var generator = new StringGenerator();
+
+            var person = new PersonToCreate()
+            {
+                person = new Person()
+                {
+                    firstName = generator.GenerateString(6),
+                    lastName = generator.GenerateString(10),
+                    organisationName = "PSWinCom1 AS"
+                }
+            };
+
+            var result = personService.Create(person);
+            result.id.ShouldBeGreaterThan("60275159");
+            result.firstName.ShouldEqual(person.person.firstName);
+            result.lastName.ShouldEqual(person.person.lastName);
+        }
+
+
 
         [Test]
         public void DeletePerson()
@@ -76,7 +99,7 @@ namespace CapsuleDotNetTests
         public void Setup()
         {
             // Insert a valid API token and Base URL here.
-            personService = new CapsuleDotNetWrapper.Services.PersonService("","");
+            personService = new CapsuleDotNetWrapper.Services.PersonService(ConfigurationManager.AppSettings["Usertoken"], ConfigurationManager.AppSettings["ApiBaseUrl"]);
 
             // random string generator used as a crux to make tests a bit easier to follow.
             generator = new StringGenerator();

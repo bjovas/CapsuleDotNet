@@ -18,7 +18,7 @@ namespace CapsuleDotNetWrapper
         public string firstName { get; set; }
         public string lastName { get; set; }
         //public string organisationId { get; set; }
-        //public string organisationName { get; set; }
+        public string organisationName { get; set; }
     }
 
     public class PersonToCreate
