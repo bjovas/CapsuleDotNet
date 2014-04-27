@@ -31,3 +31,4 @@ C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetTests\obj\Debug\CapsuleDotNetTe
 C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetTests\obj\Debug\CapsuleDotNetTests.dll
 C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetTests\obj\Debug\CapsuleDotNetTests.pdb
 C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetTests\bin\Debug\CapsuleDotNetTests.dll.config
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetTests\bin\Debug\RandomStringGenerator.dll

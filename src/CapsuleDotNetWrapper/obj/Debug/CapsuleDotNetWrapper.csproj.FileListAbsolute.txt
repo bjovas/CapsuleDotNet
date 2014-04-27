@@ -15,6 +15,6 @@ C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetWrapper\bin\Debug\log4net.dll
 C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetWrapper\bin\Debug\RestSharp.dll
 C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetWrapper\bin\Debug\log4net.xml
 C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetWrapper\bin\Debug\RestSharp.xml
-C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetWrapper\obj\Debug\CapsuleDotNetWrapper.csprojResolveAssemblyReference.cache
 C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetWrapper\obj\Debug\CapsuleDotNetWrapper.dll
 C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetWrapper\obj\Debug\CapsuleDotNetWrapper.pdb
+C:\SourcecodeMain\CapsuleDotNet\src\CapsuleDotNetWrapper\obj\Debug\CapsuleDotNetWrapper.csprojResolveAssemblyReference.cache

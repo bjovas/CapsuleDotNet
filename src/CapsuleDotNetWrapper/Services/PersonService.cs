@@ -14,6 +14,16 @@ namespace CapsuleDotNetWrapper.Services
 
         public PersonService(string authToken, string url) : base(authToken, url) { }
 
+        public Person Create(PersonToCreate person)
+        {
+            var request = new RestRequest("/api/person", Method.POST);
+            request.RequestFormat = DataFormat.Json;
+            request.RootElement = "person";
+            request.AddBody(person);
+            
+
+            return CreateExecute<Person>(request);
+        }
         public Person GetPerson(string personId)
         {
             var request = new RestRequest();

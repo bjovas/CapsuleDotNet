@@ -13,11 +13,16 @@ namespace CapsuleDotNetWrapper
     public class Person
     {
         public string id { get; set; }
-        public DateTime createdOn { get; set; }
-        public DateTime updatedOn { get; set; }
+        //public DateTime createdOn { get; set; }
+        //public DateTime updatedOn { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
-        public string organisationId { get; set; }
-        public string organisationName { get; set; }
+        //public string organisationId { get; set; }
+        //public string organisationName { get; set; }
+    }
+
+    public class PersonToCreate
+    {
+        public Person person { get; set; }
     }
 }
